@@ -1,0 +1,33 @@
+<div class="container" >
+    <div class="card">
+        <div class="card-body">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            Accesibilidad
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+            <a class="dropdown-item"  (click)="aumentar()">Aumentar tamaño</a>
+            <a class="dropdown-item"  (click)="disminuir()">Disminuir tamaño</a>
+            <a class="dropdown-item"  (click)="cambiarletra()">Cambiar letra</a>
+            
+          </div>
+        
+        </div>
+            <h2 [style.fontSize.px]="tamano" [style.font-family]="tipo">INICIAR SESION</h2>
+            <div class="nav-item active dropdown">
+        
+              
+            <form [style.fontSize.px]="tamano" [style.font-family]="tipo">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Usuario</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ingresa tu usuario">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña</label>
+                  <input type="password" name="password" id="password" class="form-control" placeholder="******">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+              
+        </div>
+    </div>
+</div>

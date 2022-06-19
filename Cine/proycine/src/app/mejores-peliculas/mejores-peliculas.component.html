@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="text-center">AQUI VA LA GRAFICA</h2>
+            <div class="card grafica">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grd">
+    <div class="grd-row">
+      <div class="grd-row-col-2">
+          <h1> 📽️!!PELÍCULAS!!📽️</h1>
+         <!-- <form>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="url_img">Imagen</label>
+            <input type="url" name="url_img">
+            <input type="submit" class="btn--blue btn--add" value="Agregar"> 
+          </form>-->
+          <form (ngSubmit)="createPeli(newMovieForm.value)" [formGroup]="newMovieForm">
+            <input type="hidden" formControlName="id">
+            
+            <label for="nombre">Nombre</label>
+            <input type="text" formControlName="nombre">
+          
+            <label for="url_img">Imagen</label>
+            <input type="url" formControlName="url">
+          
+            <input type="submit" class="btn-primary btn--add" [disabled]="!newMovieForm.valid" value="Agregar">
+          </form>
+      </div>
+      <div class="grd-row-col-4">
+        <div class="cats_container">
+          <div class="media" *ngFor="let movie of movies">
+            <div class="media-figure">
+              <img [src]="movie.data.url">
+            </div>
+            <div class="media-body">
+              <p>{{movie.data.nombre}}</p>
+              <div class="btn--group">
+                <button type="button" class="btn btn-success" (click)="editarPeli(movie.id)">Editar</button>
+                <button type="button" class="btn btn-danger" (click)="deletePeli(movie.id)"> Eliminar  </button> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
